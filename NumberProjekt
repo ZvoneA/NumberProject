@@ -1,0 +1,334 @@
+<template>
+<div id="bodi"> 
+  <div class="bg-white text-dark">
+    <!-- NAVBAR -->
+    <nav class = "navbar navbar-expand-lg navbar-light bg-danger sticky-top">
+      <span class = "navbar-brand">NUMBERS API PROJECT</span>
+      <div class = "collapse navbar-collapse">
+        <ul class = "navbar-nav">
+          <li class = "nav-item">
+            <a class = "nav-link" href = "#bodi">Početak</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "#unos">Unos</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "#ispis">Ispis</a>
+          </li>
+      
+          <li class = "nav-item">
+            <a class = "nav-link" href = "#about">About</a>
+          </li>
+      
+          <li class = "nav-item">
+            <a class = "nav-link" href = "#contact">Kontakt</a>
+          </li>    
+        </ul>
+      </div>
+    </nav>
+    <!-- UNOS -->
+    <div id="unos"><br>
+      <h1>Unesi brojeve</h1>
+      <p>Unesite brojeve u predviđene kućice i saznajte zanimljive činjenice o brojevima!</p><br>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="icon-input">
+              
+            </div>
+            <span>Unesite 1.broj :</span>
+            <input type="text" class="form-control" placeholder="Unesi Dan" v-model="dan">
+          </div>
+          <div class="col">
+            <div class="icon-input">
+            
+            </div>
+            <span>Unesite 2.broj :</span>
+            <input type="text" class="form-control" placeholder="Unesi Mjesec" v-model="mjesec">
+          </div>
+          <div class="col">
+            <div class="icon-input">
+              
+            </div>
+            <span>Unesite 3.broj :</span>
+            <input type="text" class="form-control" placeholder="Unesi Godinu" v-model="godina">
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-dark mb-2" @click="getTriviaFacts()">Dohvati TRIVIA činjenice</button><br><br>
+      <button type="button" class="btn btn-dark mb-2" @click="getMathFacts()">Dohvati MATH činjenice</button><br><br>
+      <button type="button" class="btn btn-dark mb-2" @click="getYearFacts()">Dohvati YEAR činjenice</button><br><br>
+      </div>
+
+    <!-- ISPIS PODATAKA -->
+    <div id="ispis">
+      <div class="card-columns">
+        <div class="card bg-danger">
+          <div class="card-body text-center">
+            
+            <h5>TRIVIA</h5>
+            <p v-if="!danTrivia" class="card-text"></p>
+            <p v-else class="card-text">{{danTrivia}}</p>
+          </div>
+        </div>
+        <div class="card bg-warning">
+          <div class="card-body text-center">
+            
+            <h5>MATH</h5>
+            <p class="card-text">{{danMath}}</p>
+          </div>
+        </div>
+        <div class="card bg-info">
+          <div class="card-body text-center">
+            
+            <h5>YEAR</h5>
+            <p class="card-text">{{danYear}}</p>
+          </div>
+        </div>
+        <div class="card bg-danger">
+          <div class="card-body text-center">
+            
+            <h5>TRIVIA</h5>
+            <p class="card-text">{{mjesecTrivia}}</p>
+          </div>
+        </div>
+        <div class="card bg-warning">
+          <div class="card-body text-center">
+            
+            <h5>MATH</h5>
+            <p class="card-text">{{mjesecMath}}</p>
+          </div>
+        </div>
+        <div class="card bg-info">
+          <div class="card-body text-center">
+            
+            <h5>YEAR</h5>
+            <p class="card-text">{{mjesecYear}}</p>
+          </div>
+        </div>
+        <div class="card bg-danger">
+          <div class="card-body text-center">
+            
+            <h5>TRIVIA</h5>
+            <p class="card-text">{{godinaTrivia}}</p>
+          </div>
+        </div>
+        <div class="card bg-warning">
+          <div class="card-body text-center">
+            
+            <h5>MATH</h5>
+            <p class="card-text">{{godinaMath}}</p>
+          </div>
+        </div>
+        <div class="card bg-info">
+          <div class="card-body text-center">
+            
+            <h5>YEAR</h5>
+            <p class="card-text">{{godinaYear}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about">
+      <div class="about-text">
+        <h1>Numerologija</h1>
+        <p>Riječ numerologija je složenica od latinske riječi numerus što znači broj i grčke riječi logos, što znači govor, riječ, pojam, misao te bi pojam
+        numerologija mogli definirati kao znanost o brojevima. Numerologija i numerološke divinacije bile su popularne među ranim matematičarima poput Pitagore, 
+  ali se više ne smatraju dijelom matematike, već ih većina znanstvenika smatra pseudomatematikom. Slična ih povijest veže s razvojem i razdvajanjem astronomije 
+  od astrologije, i kemije od alkemije.Numerologija je danas najčešće vezana uz okultne znanosti, zajedno sa astrologijom i sličnim metodama divinacije. 
+  Termin se također koristi za osobe koje, prema nekima, pridaju preveliku važnost brojčanim matricama, čak i ako ne prakticiraju tradicionalnu numerologiju.
+  Underwood Dudley primjerice, koristi taj termin u diskusiji o praktikantima Elliott valnog principa analize burze
+        </p>
+        <h1>TRIVIA</h1>
+          <p>trivijalan (lat. trivialis: običan), općenito: nevažan, nebitan. U matematici, trivijalno rješenje, rješenje koje je samo po sebi jasno, koje ne donosi 
+          ništa novo. Npr. jednadžba x4 + (x + 2)² – 4 = 0, ima trivijalno rješenje za x = 0.
+          </p>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <p><strong>FPMOZ</strong></p>
+            <p>Tel: +387 36 355-455</p>
+            <p>Fax: +387 36 355-458</p>
+            <a href="https://fpmoz.sum.ba" target="_blank">
+              <img width=35 src="https://i.imgur.com/rFguBam.png" alt="Fakultet prirodoslovno-matematickih i odgojnih znanosti">
+            </a>
+          </div>
+          <div class="col-md-6 text-center">
+            <p><strong>SUM</strong></p>
+            <p>Tel: +387 36 337-070</p>
+            <p>Fax: +387 36 320-885</p>
+            <a href="https://www.sum.ba" target="_blank">
+              <img width=55 src="https://i.imgur.com/ogVRxqr.png" alt="Sveučilište u Mostaru">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small teal pt-4">
+
+      <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">© 2020 Copyright:
+          <a href="https://fpmoz.sum.ba">FPMOZ , All rights reserved.</a>
+          </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+    
+
+
+  </div>
+</div>
+</template>
+
+
+
+<script>
+import axios from 'axios'
+export default {
+  name : "projekt",
+  data () {
+    return {
+      dan: '',
+      mjesec: '',
+      godina: '',
+      danMath: null,
+      danTrivia: null,
+      danYear: null,
+      mjesecMath: null,
+      mjesecTrivia: null,
+      mjesecYear: null,
+      godinaMath: null,
+      godinaTrivia: null,
+      godinaYear: null
+    }
+  },
+  
+  methods: {
+    getTriviaFacts () {
+      const va = this
+      axios.get(`http://numbersapi.com/${this.dan}/trivia`)
+        .then(function (response) {
+          va.danTrivia = response.data
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+      axios.get(`http://numbersapi.com/${this.mjesec}/trivia`)
+        .then(function (response) {
+          va.mjesecTrivia = response.data
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+      axios.get(`http://numbersapi.com/${this.godina}/trivia`)
+        .then(function (response) {
+          va.godinaTrivia = response.data
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
+    },
+
+    getMathFacts () {
+      const ba = this
+      axios.get(`http://numbersapi.com/${this.dan}/math`)
+        .then(function (response) {
+          ba.danMath = response.data
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+      axios.get(`http://numbersapi.com/${this.mjesec}/math`)
+        .then(function (response) {
+          ba.mjesecMath = response.data
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+      axios.get(`http://numbersapi.com/${this.godina}/math`)
+        .then(function(response) {
+          ba.godinaMath = response.data
+        })
+        .catch(function(error) {
+          //handle error
+          console.log(error);
+        });
+    },
+
+    getYearFacts () {
+      const ya = this
+      axios.get(`http://numbersapi.com/${this.dan}/year`)
+        .then(function(response) {
+          ya.danYear = response.data
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+      axios.get(`http://numbersapi.com/${this.mjesec}/year`)
+        .then(function (response) {
+          ya.mjesecYear = response.data
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+      axios.get(`http://numbersapi.com/${this.godina}/year`)
+        .then(function (response) {
+          ya.godinaYear = response.data
+        })
+        .catch(function (error) {
+          //handle error
+          console.log(error);
+        });
+    },
+
+
+  }
+}
+  
+
+
+</script>
+
+<style>
+  #bodi {
+    background-color:darkgrey;
+  }
+  body, html {
+    height: 100%;
+  }
+  #unos input {
+    width: 150px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+  #unos {
+    background-color:#d1d1e0;
+  }
+  #ispis {
+    padding: 10px 20px;
+  }
+  .about-text {
+    padding: 20px 0px;
+    width: 60%;
+    margin: auto;
+  }
+  #about {
+    background-color:#d1d1e0;
+  }
+  #contact {
+    margin-top: 20px;
+  }
+</style>
